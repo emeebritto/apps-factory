@@ -6,8 +6,8 @@ import { RemoteComponent } from "@paciolan/remote-component";
 import ReactDOM from "react-dom";
 import React from "react";
 
-import LocalComponent from "./apps/audio-player";
-const comp = "audio-player";
+import LocalComponent from "./apps/audio-stream";
+const comp = "audio-stream";
 
 const url = process.env.NODE_ENV === "development"
   ? `/dist/${comp}.js`

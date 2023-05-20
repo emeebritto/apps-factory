@@ -5,6 +5,7 @@
 module.exports = {
   resolve: {
     react: require("react"),
-    Styled: require("styled-components")
+    Styled: require("styled-components"),
+    ReactPlayer: require("react-player")
   }
 };

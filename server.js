@@ -23,8 +23,14 @@ app.get('/app/:filename', (req, res) => {
   const filename = req.params.filename;
   const filePath = path.join(appsDirectory, filename);
 
-  const fileStream = fs.createReadStream(filePath);
-  fileStream.pipe(res);
+  if (fs.existsSync(filePath)) {
+    const fileStream = fs.createReadStream(filePath);
+    fileStream.pipe(res);
+  } else {
+    const notFoundAppPath = path.join(appsDirectory, "notFound.js");
+    const fileStream = fs.createReadStream(notFoundAppPath);
+    fileStream.pipe(res);
+  }
 });
 
 // Start the server
